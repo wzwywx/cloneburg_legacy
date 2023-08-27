@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b58fp1u4jc25s"]
+[gd_scene load_steps=6 format=3 uid="uid://b58fp1u4jc25s"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_lkutl"]
 [ext_resource type="VideoStream" path="res://main_menu_animated_bg.ogv" id="2_kyy0q"]
 [ext_resource type="AudioStream" uid="uid://bkmye7l0u5ln1" path="res://chair_ogg.ogg" id="2_y1i3x"]
 [ext_resource type="Texture2D" uid="uid://bljbtg2g67lm8" path="res://logo_large_color_light.svg" id="4_p656y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqonq"]
+bg_color = Color(0.929412, 0.815686, 0.713726, 1)
+border_color = Color(0.929412, 0.815686, 0.713726, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+shadow_offset = Vector2(-2, 5)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -40,6 +48,18 @@ offset_bottom = 208.0
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_p656y")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -501.0
+offset_right = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gqonq")
 
 [connection signal="finished" from="AnimatedBackground" to="." method="_on_animated_background_finished"]
 [connection signal="finished" from="MainMenuMusic" to="." method="_on_audio_stream_player_finished"]
