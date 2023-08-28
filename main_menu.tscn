@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b58fp1u4jc25s"]
+[gd_scene load_steps=8 format=3 uid="uid://b58fp1u4jc25s"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_lkutl"]
 [ext_resource type="VideoStream" path="res://main_menu_animated_bg.ogv" id="2_kyy0q"]
 [ext_resource type="AudioStream" uid="uid://bkmye7l0u5ln1" path="res://chair_ogg.ogg" id="2_y1i3x"]
 [ext_resource type="Texture2D" uid="uid://bljbtg2g67lm8" path="res://logo_large_color_light.svg" id="4_p656y"]
 [ext_resource type="Texture2D" uid="uid://duoem4uj22wew" path="res://logo_vertical_monochrome_light.svg" id="5_qnyi7"]
+[ext_resource type="Theme" uid="uid://cjrb1vgq2vhn8" path="res://main_menu.tres" id="6_a6ucw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqonq"]
 bg_color = Color(0.929412, 0.815686, 0.713726, 1)
@@ -74,6 +75,36 @@ offset_bottom = 736.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_qnyi7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -57.0
+offset_right = 151.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_a6ucw")
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_a6ucw")
+text = "New Game"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_a6ucw")
+text = "Load Game"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_a6ucw")
+text = "Options"
 
 [connection signal="finished" from="AnimatedBackground" to="." method="_on_animated_background_finished"]
 [connection signal="finished" from="MainMenuMusic" to="." method="_on_audio_stream_player_finished"]

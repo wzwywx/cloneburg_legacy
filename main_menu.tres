@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cjrb1vgq2vhn8"]
+
+[ext_resource type="StyleBox" uid="uid://dxm0e8hnj34ux" path="res://mm_button_normal.tres" id="1_avln3"]
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/styles/focus = null
+Button/styles/normal = ExtResource("1_avln3")
+VBoxContainer/constants/separation = 32
