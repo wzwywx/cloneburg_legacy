@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b58fp1u4jc25s"]
+[gd_scene load_steps=9 format=3 uid="uid://b58fp1u4jc25s"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_lkutl"]
 [ext_resource type="VideoStream" path="res://main_menu_animated_bg.ogv" id="2_kyy0q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bljbtg2g67lm8" path="res://logo_large_color_light.svg" id="4_p656y"]
 [ext_resource type="Texture2D" uid="uid://duoem4uj22wew" path="res://logo_vertical_monochrome_light.svg" id="5_qnyi7"]
 [ext_resource type="Theme" uid="uid://cjrb1vgq2vhn8" path="res://main_menu.tres" id="6_a6ucw"]
+[ext_resource type="Texture2D" uid="uid://b6j3kahrv0ibo" path="res://art/facebook.png" id="7_qckqc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqonq"]
 bg_color = Color(0.929412, 0.815686, 0.713726, 1)
@@ -105,6 +106,36 @@ text = "Load Game"
 layout_mode = 2
 theme = ExtResource("6_a6ucw")
 text = "Options"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -160.0
+offset_right = 137.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("7_qckqc")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("7_qckqc")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("7_qckqc")
+stretch_mode = 5
 
 [connection signal="finished" from="AnimatedBackground" to="." method="_on_animated_background_finished"]
 [connection signal="finished" from="MainMenuMusic" to="." method="_on_audio_stream_player_finished"]
